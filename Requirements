@@ -2,7 +2,16 @@ Future home of requirements necessary to run the code files.
 
 Like boards, libraries, etc. 
 
+WiFi Arduino
+  Board: 
+  ESP32 Dev Module
+  libraries:
+  AsyncTCP-master
+  ESPAsyncWebServer master
+
 BLE Arduino 
+  Board:
+  ESP32 Dev Module
   libraries:
   ESP32 BLE Arduino 
 
