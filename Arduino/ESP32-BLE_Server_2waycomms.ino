@@ -167,35 +167,35 @@ void processCommand(int cmd) {
   switch (cmd) {
     case 0:  // Stop
       Serial.println("Stopping...");
-      //stopAll();
+      stopAll();
       break;
     case 1:  // Forward
       Serial.println("Moving Forward...");
-      //forward();
+      forward();
       break;
     case 2:  // Backward
       Serial.println("Moving Backward...");
-      //backward();
+      backward();
       break;
     case 3:  // Turn Left
       Serial.println("Turning Left...");
-      //turnLeft();
+      turnLeft();
       break;
     case 4:  // Turn Right
       Serial.println("Turning Right...");
-      //turnRight();
+      turnRight();
       break;
     case 5:  // Strafe Left
       Serial.println("Strafing Left...");
-      //strafeLeft();
+      strafeLeft();
       break;
     case 6:  // Strafe Right
       Serial.println("Strafing Right...");
-      //strafeRight();
+      strafeRight();
       break;
     default:
       Serial.println("Invalid Command! Stopping...");
-      //stopAll();
+      stopAll();
       break;
   }
 }
@@ -246,28 +246,28 @@ void setup() {
   Serial.begin(115200);
   Serial.println("Starting BLE Rover...");
   // ----- MOTOR PIN SETUP -----
-  // pinMode(MOTOR_A_PIN_1, OUTPUT);
-  // pinMode(MOTOR_A_PIN_2, OUTPUT);
-  // pinMode(ENABLE_A_PIN,   OUTPUT);
-  // pinMode(MOTOR_B_PIN_1, OUTPUT);
-  // pinMode(MOTOR_B_PIN_2, OUTPUT);
-  // pinMode(ENABLE_B_PIN,   OUTPUT);
-  // pinMode(MOTOR_C_PIN_1, OUTPUT);
-  // pinMode(MOTOR_C_PIN_2, OUTPUT);
-  // pinMode(ENABLE_C_PIN,   OUTPUT);
-  // pinMode(MOTOR_D_PIN_1, OUTPUT);
-  // pinMode(MOTOR_D_PIN_2, OUTPUT);
-  // pinMode(ENABLE_D_PIN,   OUTPUT);
-  // // ----- PWM Setup (Depending on your ESP32 core you may need ledcSetup+ledcAttachPin) -----
-  // ledcAttachChannel(ENABLE_A_PIN, FREQUENCY_A, RESOLUTION_A, PWM_CHANNEL_A);
-  // ledcAttachChannel(ENABLE_B_PIN, FREQUENCY_B, RESOLUTION_B, PWM_CHANNEL_B);
-  // ledcAttachChannel(ENABLE_C_PIN, FREQUENCY_C, RESOLUTION_C, PWM_CHANNEL_C);
-  // ledcAttachChannel(ENABLE_D_PIN, FREQUENCY_D, RESOLUTION_D, PWM_CHANNEL_D);
-  // // Set motor speeds
-  // ledcWrite(ENABLE_A_PIN, dutyCycleA);
-  // ledcWrite(ENABLE_B_PIN, dutyCycleB);
-  // ledcWrite(ENABLE_C_PIN, dutyCycleC);
-  // ledcWrite(ENABLE_D_PIN, dutyCycleD);
+  pinMode(MOTOR_A_PIN_1, OUTPUT);
+  pinMode(MOTOR_A_PIN_2, OUTPUT);
+  pinMode(ENABLE_A_PIN,   OUTPUT);
+  pinMode(MOTOR_B_PIN_1, OUTPUT);
+  pinMode(MOTOR_B_PIN_2, OUTPUT);
+  pinMode(ENABLE_B_PIN,   OUTPUT);
+  pinMode(MOTOR_C_PIN_1, OUTPUT);
+  pinMode(MOTOR_C_PIN_2, OUTPUT);
+  pinMode(ENABLE_C_PIN,   OUTPUT);
+  pinMode(MOTOR_D_PIN_1, OUTPUT);
+  pinMode(MOTOR_D_PIN_2, OUTPUT);
+  pinMode(ENABLE_D_PIN,   OUTPUT);
+  // ----- PWM Setup (Depending on your ESP32 core you may need ledcSetup+ledcAttachPin) -----
+  ledcAttachChannel(ENABLE_A_PIN, FREQUENCY_A, RESOLUTION_A, PWM_CHANNEL_A);
+  ledcAttachChannel(ENABLE_B_PIN, FREQUENCY_B, RESOLUTION_B, PWM_CHANNEL_B);
+  ledcAttachChannel(ENABLE_C_PIN, FREQUENCY_C, RESOLUTION_C, PWM_CHANNEL_C);
+  ledcAttachChannel(ENABLE_D_PIN, FREQUENCY_D, RESOLUTION_D, PWM_CHANNEL_D);
+  // Set motor speeds
+  ledcWrite(ENABLE_A_PIN, dutyCycleA);
+  ledcWrite(ENABLE_B_PIN, dutyCycleB);
+  ledcWrite(ENABLE_C_PIN, dutyCycleC);
+  ledcWrite(ENABLE_D_PIN, dutyCycleD);
   // ----- BLE Setup -----
   const char* deviceName = "ESP32-BLE-Rover";
   BLEDevice::init(deviceName);
@@ -318,7 +318,7 @@ void setup() {
 void loop() {
   // All BLE handling is done via callbacks; nothing needed here
   delay(5000);
-  sendNotif("HELLO!");
+  sendNotif("HELLO!"); // change or remove this to something more useful
 }
 
 

@@ -4,8 +4,7 @@ from bleak import BleakClient
 # Replace with your ESP32's BLE MAC address or BLE device identifier.
 # Example (Linux/macOS): address = "AA:BB:CC:11:22:33"
 # On Windows, it might be something like: "00000000-0000-0000-0000-000000000000"
-# address = "2c:bc:bb:4c:57:3a" # MAKE SURE TO CHANGE/CHECK THIS IP 
-address = 'a0:a3:b3:2b:36:26'
+address = "2c:bc:bb:4c:57:3a" # MAKE SURE TO CHANGE/CHECK THIS IP 
 SERVICE_UUID = "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
 ESP_INPUT_CHARACTERISTIC_UUID = "beb5483e-36e1-4688-b7f5-ea07361b26a8"
 ESP_REPORT_CHARACTERISTIC_UUID = "2d21fb45-ea18-4b00-9fc9-53e55e2363be"
