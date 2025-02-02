@@ -60,8 +60,9 @@ BLECharacteristic *pNotifyCharacteristic;
 
 // BLE Programmable Global Variables (and their default values)
 int timer_delay = 200;    // set with 't' command 
-int speed = 100;          // set with 's' command
+int speed = 190;          // set with 's' command
 bool enable_notifs = 1;   // set with 'n' command
+int timer = 0; // autostop
 
 // Other non-action BLE Commands
 // send report            // request with 'r' command
@@ -172,26 +173,32 @@ void processCommand(int cmd) {
     case 1:  // Forward
       Serial.println("Moving Forward...");
       forward();
+      timer = timer_delay;
       break;
     case 2:  // Backward
       Serial.println("Moving Backward...");
       backward();
+      timer = timer_delay;
       break;
     case 3:  // Turn Left
       Serial.println("Turning Left...");
       turnLeft();
+      timer = timer_delay;
       break;
     case 4:  // Turn Right
       Serial.println("Turning Right...");
       turnRight();
+      timer = timer_delay;
       break;
     case 5:  // Strafe Left
       Serial.println("Strafing Left...");
       strafeLeft();
+      timer = timer_delay;
       break;
     case 6:  // Strafe Right
       Serial.println("Strafing Right...");
       strafeRight();
+      timer = timer_delay;
       break;
     default:
       Serial.println("Invalid Command! Stopping...");
@@ -211,6 +218,10 @@ void processAdminCommand(String cmd) {
       break;
     case 's':
       speed = value;
+      dutyCycleA = value;
+      dutyCycleB = value;
+      dutyCycleC = value;
+      dutyCycleD = value;
       break;
     case 't':
       timer_delay = value;
@@ -317,8 +328,12 @@ void setup() {
 // ===================== LOOP =====================
 void loop() {
   // All BLE handling is done via callbacks; nothing needed here
-  delay(5000);
-  sendNotif("HELLO!"); // change or remove this to something more useful
+  while (timer > 0) {
+    delay(1);
+    timer--;
+  }
+  sendNotif("Autostopping!"); // change or remove this to something more useful
+  stopAll();
 }
 
 
