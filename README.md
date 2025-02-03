@@ -51,14 +51,24 @@ The rover project at LHNT aims to build a rover from scratch, combining efforts 
 
 ## Controls
 0 - Stop
+
 1 - Forward
+
 2 - Backward
+
 3 - Turn Left
+
 4 - Turn Right
+
 5 - Strafe Left
+
 6 - Strafe Right
+
 r - Request Report
+
 s \[num\] - set speed to num (0 to 255)
+
 t \[num\] - set timer delay to num (in ms)
+
 n - enable notifications
 
