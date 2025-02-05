@@ -331,9 +331,11 @@ void loop() {
   while (timer > 0) {
     delay(1);
     timer--;
+    if (timer == 0) {
+      sendNotif("Autostopping!");
+      stopAll();
+    }
   }
-  sendNotif("Autostopping!"); // change or remove this to something more useful
-  stopAll();
 }
 
 
