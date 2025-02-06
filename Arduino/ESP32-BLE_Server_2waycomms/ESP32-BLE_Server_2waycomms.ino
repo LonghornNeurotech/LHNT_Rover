@@ -161,6 +161,18 @@ void sendNotif(String message) {
   }
 }
 
+void updateSpeed(int value) {
+  speed = value;
+  dutyCycleA = value;
+  dutyCycleB = value;
+  dutyCycleC = value;
+  dutyCycleD = value;
+  ledcWrite(ENABLE_A_PIN, dutyCycleA);
+  ledcWrite(ENABLE_B_PIN, dutyCycleB);
+  ledcWrite(ENABLE_C_PIN, dutyCycleC);
+  ledcWrite(ENABLE_D_PIN, dutyCycleD);
+}
+
 // ===================== PROCESS COMMAND =====================
 void processCommand(int cmd) {
   Serial.print("Received Command: ");
@@ -217,11 +229,7 @@ void processAdminCommand(String cmd) {
       sendReport();
       break;
     case 's':
-      speed = value;
-      dutyCycleA = value;
-      dutyCycleB = value;
-      dutyCycleC = value;
-      dutyCycleD = value;
+      updateSpeed(value)
       break;
     case 't':
       timer_delay = value;
