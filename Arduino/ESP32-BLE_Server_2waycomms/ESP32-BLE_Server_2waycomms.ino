@@ -229,7 +229,7 @@ void processAdminCommand(String cmd) {
       sendReport();
       break;
     case 's':
-      updateSpeed(value)
+      updateSpeed(value);
       break;
     case 't':
       timer_delay = value;
