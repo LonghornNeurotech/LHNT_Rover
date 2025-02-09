@@ -62,7 +62,11 @@ BLECharacteristic *pNotifyCharacteristic;
 int timer_delay = 200;    // set with 't' command 
 int speed = 190;          // set with 's' command
 bool enable_notifs = 1;   // set with 'n' command
+
+
 int timer = 0; // autostop
+long time_since_last_command = 0;
+bool autostop_enable = true;
 
 // Other non-action BLE Commands
 // send report            // request with 'r' command
@@ -177,6 +181,8 @@ void updateSpeed(int value) {
 void processCommand(int cmd) {
   Serial.print("Received Command: ");
   Serial.println(cmd);
+  time_since_last_command = millis();
+  autostop_enable = true;
   switch (cmd) {
     case 0:  // Stop
       Serial.println("Stopping...");
@@ -336,13 +342,18 @@ void setup() {
 // ===================== LOOP =====================
 void loop() {
   // All BLE handling is done via callbacks; nothing needed here
-  while (timer > 0) {
-    delay(1);
-    timer--;
-    if (timer == 0) {
-      sendNotif("Autostopping!");
-      stopAll();
-    }
+  // while (timer > 0) {
+  //   delay(1);
+  //   timer--;
+  //   if (timer == 0) {
+  //     sendNotif("Autostopping!");
+  //     stopAll();
+  //   }
+  // }
+  if (autostop_enable && millis() - timer_delay > time_since_last_command) {
+    sendNotif("Autostopping!");
+    stopAll();
+    autostop_enable = false;
   }
 }
 
