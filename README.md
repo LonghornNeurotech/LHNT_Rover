@@ -5,6 +5,7 @@
 1. [Project Overview](#Project-Overview)
 2. [Team](#Team)
 3. [Features](#Features)
+4. [Controls](#Controls)
 
 ---
 
