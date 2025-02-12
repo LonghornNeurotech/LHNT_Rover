@@ -1,4 +1,4 @@
-# LHNT's Rover Project
+# Longhorn Neurotech Rover Project
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@ The rover project at LHNT aims to build a rover from scratch, combining efforts 
 - **Drivetrain Team**
   - Build the rover's body, shell, and obstacles for testing.
   - Team Lead: Sydney Fawcett
-  - Members: Nandini Senthilkumar, Graham Gilbert, Matthew Wilson
+  - Members: Nandini Senthilkumar, Graham Gilbert, Matthew Wilson, Eliza Cabrera
 - **Hardware-Software Integration Team**
   - Ensure the rover can wirelessly communicate with a computer, and ensure the reliability of this connection.
   - Team Lead: Sierra Nguyen
