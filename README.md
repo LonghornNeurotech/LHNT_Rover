@@ -1,7 +1,5 @@
 # Longhorn Neurotech Rover Project
----
-[To LHNT Hardware](https://github.com/SeanOmodon/LHNT_Hardware)
-
+### [To LHNT Hardware](https://github.com/SeanOmodon/LHNT_Hardware)
 ## Table of Contents
 
 1. [Project Overview](#Project-Overview)
