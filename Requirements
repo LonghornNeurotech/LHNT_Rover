@@ -13,6 +13,10 @@ BLE Server Arduino
   libraries:
   ESP32 BLE Arduino 
 
+Wifi Client Arduino
+Board: Arduino Uno R4
+libraries:
+
 BLE Python
   libraries:
   bleak
