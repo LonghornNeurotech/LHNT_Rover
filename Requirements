@@ -14,10 +14,12 @@ BLE Server Arduino
   ESP32 BLE Arduino 
 
 Wifi Client Arduino
-Board: Arduino Uno R4
+Board: Arduino Uno R4 Wifi
+  Make sure its this board so the libraries are automatically included / if you have issues with #include <WiFiS3.h> make sure you have the right board selected
 libraries:
+  none 
 
 BLE Python
-  libraries:
+libraries:
   bleak
 
