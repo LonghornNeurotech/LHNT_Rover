@@ -20,7 +20,14 @@ libraries:
 BLE Python
   libraries:
   bleak
+  can be installed using ( pip install bleak )
+
+Epocam Video Overlay
+  libraries:
+  opencv-python 
+  can be installed using ( pip install opencv-python )
 
 EpocCam:
   Download link: https://www.elgato.com/us/en/s/epoccam
   ( Only available on iPhone )
+
