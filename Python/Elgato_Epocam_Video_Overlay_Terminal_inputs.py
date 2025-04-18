@@ -1,4 +1,9 @@
-# this code takes terminal text inputs and updates the text on the overlay
+#  Written by HSI: Michael, Sierra, Aashvi, Rishik
+#  Last Updated 4/18/2025
+#  LHNT Rover Spring 2025
+#
+# This code takes terminal text inputs and updates the text on the overlay using the EpoCam laptop and iPhone app 
+#
 import cv2
 import threading
 overlay_text = "Starting..."  # Default text
