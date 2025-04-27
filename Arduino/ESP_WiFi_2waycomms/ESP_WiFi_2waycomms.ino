@@ -1,11 +1,12 @@
 /*
-  Written by Ibrahim & Vic
-  November 7th, 2024
-  LHNT Rover Fall 2024
+  Written by Electronics: Ibrahim & Vic, and HSI: Michael, Sierra, Aashvi, Rishik
+  Last Updated 4/18/2025
+  LHNT Rover Spring 2025
 */
 
-// this code uses 2 motor drivers, has 7 possible degrees of freedom (forward, backward, left, right, strafe left, strafe right, stop)
-// does not automatically stop the rover after a given time interval. 
+// This code uses 2 motor drivers, has 7 possible degrees of freedom (forward, backward, left, right, strafe left, strafe right, stop)
+// Stops the rover after a given time interval. 
+// Details on time interval and speed are given by the report system
 
 // From HSI
 #include <WiFi.h>
